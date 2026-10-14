@@ -186,13 +186,85 @@
    "direccion": "Carrer d'Isabel la Catòlica, 11",
    "rating": 4.6,
    "total": 14888,
-   "dist": null,
-   "leido": null,
-   "chips": [],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "dist": {
+    "1": 494,
+    "2": 329,
+    "3": 621,
+    "4": 2060,
+    "5": 11384
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "ambientación",
+     "menciones": 623
+    },
+    {
+     "tema": "años 20",
+     "menciones": 457
+    },
+    {
+     "tema": "viaje en el tiempo",
+     "menciones": 122
+    },
+    {
+     "tema": "músicos",
+     "menciones": 101
+    },
+    {
+     "tema": "trufada",
+     "menciones": 95
+    },
+    {
+     "tema": "puros",
+     "menciones": 56
+    },
+    {
+     "tema": "guitarra",
+     "menciones": 51
+    },
+    {
+     "tema": "librería",
+     "menciones": 46
+    }
+   ],
+   "muestraBajas": 50,
+   "bajas12m": 44,
+   "sinRespuesta12m": 3,
+   "quejas": {
+    "Reservas y espera para sentarse": {
+     "total": 20,
+     "ultimos12m": 16
+    },
+    "Atención del personal": {
+     "total": 19,
+     "ultimos12m": 16
+    },
+    "Esperas y ritmo del servicio": {
+     "total": 30,
+     "ultimos12m": 27
+    },
+    "Comida fría o precocinada": {
+     "total": 10,
+     "ultimos12m": 10
+    },
+    "Calidad y sabor de la comida": {
+     "total": 4,
+     "ultimos12m": 4
+    },
+    "Precio y cobros": {
+     "total": 7,
+     "ultimos12m": 5
+    },
+    "Limpieza y estado del local": {
+     "total": 5,
+     "ultimos12m": 5
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 4,
+     "ultimos12m": 4
+    }
+   }
   },
   {
    "id": "voltereta-kioto",
