@@ -627,15 +627,95 @@
    "marca": "Begin",
    "local": "Begin Jardín Secreto",
    "direccion": "C. de Martínez Ferrando, 5",
-   "rating": null,
-   "total": null,
-   "dist": null,
-   "leido": null,
-   "chips": [],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "rating": 4.5,
+   "total": 4389,
+   "dist": {
+    "1": 223,
+    "2": 93,
+    "3": 131,
+    "4": 554,
+    "5": 3388
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "menú degustación",
+     "menciones": 74
+    },
+    {
+     "tema": "ámbar",
+     "menciones": 31
+    },
+    {
+     "tema": "canelón",
+     "menciones": 30
+    },
+    {
+     "tema": "burrata",
+     "menciones": 28
+    },
+    {
+     "tema": "ambientación",
+     "menciones": 27
+    },
+    {
+     "tema": "carrillera",
+     "menciones": 24
+    },
+    {
+     "tema": "risotto",
+     "menciones": 23
+    },
+    {
+     "tema": "brioche",
+     "menciones": 19
+    },
+    {
+     "tema": "tataki",
+     "menciones": 14
+    }
+   ],
+   "muestraBajas": 50,
+   "bajas12m": 50,
+   "sinRespuesta12m": 42,
+   "quejas": {
+    "Reservas y espera para sentarse": {
+     "total": 16,
+     "ultimos12m": 16
+    },
+    "Atención del personal": {
+     "total": 24,
+     "ultimos12m": 24
+    },
+    "Esperas y ritmo del servicio": {
+     "total": 24,
+     "ultimos12m": 24
+    },
+    "Precio y cobros": {
+     "total": 8,
+     "ultimos12m": 8
+    },
+    "Limpieza y estado del local": {
+     "total": 5,
+     "ultimos12m": 5
+    },
+    "Calidad y sabor de la comida": {
+     "total": 5,
+     "ultimos12m": 5
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 2,
+     "ultimos12m": 2
+    },
+    "Comida fría o precocinada": {
+     "total": 6,
+     "ultimos12m": 6
+    },
+    "Delivery y recogida": {
+     "total": 2,
+     "ultimos12m": 2
+    }
+   }
   },
   {
    "id": "one-burger-valencia",
