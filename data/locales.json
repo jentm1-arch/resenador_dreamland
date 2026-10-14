@@ -462,7 +462,6 @@
    },
    "reciente": {
     "local": "Begin Origen",
-    "ventana": "últimos ~3 meses (lo que Maps deja cargar)",
     "leidas": 490,
     "conTexto": 378,
     "estrellas": {
@@ -494,6 +493,7 @@
      "SEG": 4,
      "DEL": 3
     },
+    "meses": 3,
     "promedio": 4.64
    }
   },
@@ -597,7 +597,6 @@
    },
    "reciente": {
     "local": "Begin Profundidades Marinas",
-    "ventana": "últimos ~3 meses (lo que Maps deja cargar)",
     "leidas": 580,
     "conTexto": 137,
     "estrellas": {
@@ -630,6 +629,7 @@
      "TEM": 2,
      "SEG": 1
     },
+    "meses": 3,
     "promedio": 4.68
    }
   },
@@ -729,7 +729,6 @@
    },
    "reciente": {
     "local": "Begin Invernadero",
-    "ventana": "últimos ~2 meses (lo que Maps deja cargar)",
     "leidas": 130,
     "conTexto": 52,
     "estrellas": {
@@ -760,6 +759,7 @@
      "TEM": 1,
      "AMB": 1
     },
+    "meses": 2,
     "promedio": 4.17
    }
   },
@@ -855,7 +855,6 @@
    },
    "reciente": {
     "local": "Begin Huerta",
-    "ventana": "últimos ~3 meses (lo que Maps deja cargar)",
     "leidas": 260,
     "conTexto": 44,
     "estrellas": {
@@ -883,6 +882,7 @@
      "SAB": 2,
      "SEG": 1
     },
+    "meses": 3,
     "promedio": 4.58
    }
   },
@@ -982,7 +982,6 @@
    },
    "reciente": {
     "local": "Begin Jardín Secreto",
-    "ventana": "últimos ~2 meses (lo que Maps deja cargar)",
     "leidas": 260,
     "conTexto": 111,
     "estrellas": {
@@ -1013,6 +1012,7 @@
      "TEM": 1,
      "SEG": 1
     },
+    "meses": 2,
     "promedio": 4.61
    }
   },

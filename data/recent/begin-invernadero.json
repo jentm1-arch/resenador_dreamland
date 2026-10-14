@@ -1,6 +1,5 @@
 {
  "local": "Begin Invernadero",
- "ventana": "últimos ~2 meses (lo que Maps deja cargar)",
  "leidas": 130,
  "conTexto": 52,
  "estrellas": {
@@ -30,5 +29,6 @@
   "CAR": 2,
   "TEM": 1,
   "AMB": 1
- }
+ },
+ "meses": 2
 }

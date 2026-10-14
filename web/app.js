@@ -59,6 +59,13 @@ function bars(items, cls, valFmt) {
   return items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${valFmt(i)}</span></div><div class="btrack" title="${esc(i.t)}"><div class="bfill ${cls}" style="width:${i.v / max * 100}%"></div></div></div>`).join('');
 }
 
+function periodoTxt(rs) {
+  const max = Math.max(...rs.map(l => l.reciente.meses));
+  const cortos = rs.filter(l => l.reciente.meses < max);
+  return `últimos ${max} meses` + (cortos.length ? ` (solo ${Math.min(...cortos.map(l => l.reciente.meses))} en ${cortos.map(l => l.local.replace(/^Begin /, '')).join(', ')}: es lo que Maps dejó cargar)` : '');
+}
+const SIN_PREVIO = ' Comparación con periodos anteriores: sin datos previos todavía.';
+
 function sumTemas(rs, k, top = 6) {
   const m = {};
   rs.forEach(l => Object.entries(l.reciente[k]).forEach(([t, v]) => { m[t] = (m[t] || 0) + v; }));
@@ -69,11 +76,11 @@ function renderPos(ls) {
   const rs = ls.filter(l => l.reciente);
   if (rs.length) {
     const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
-    $('posHint').textContent = `Temas elogiados en ${fmt(n)} reseñas recientes con texto (de ${rs.length} ${rs.length === 1 ? 'local' : 'locales'}), clasificadas leyendo cada una. Porcentaje sobre reseñas con texto; una reseña puede elogiar varios temas.`;
+    $('posHint').textContent = `Temas elogiados en ${fmt(n)} reseñas con texto de los ${periodoTxt(rs)}, clasificadas leyendo cada una. Porcentaje sobre reseñas con texto; una reseña puede elogiar varios temas.` + SIN_PREVIO;
     $('pos').innerHTML = '<div class="pos">' + bars(sumTemas(rs, 'positivos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
-  $('posHint').textContent = 'Temas que Google detecta en las reseñas de toda la ficha (sin distinguir tono). Lectura de reseñas recientes pendiente para esta selección.';
+  $('posHint').textContent = 'Temas que Google detecta en las reseñas de toda la ficha (sin distinguir tono). Lectura de reseñas pendiente para esta selección.';
   const m = {};
   ls.forEach(l => l.chips.forEach(c => { m[c.tema] = (m[c.tema] || 0) + c.menciones; }));
   const items = Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([t, v]) => ({ t, v }));
@@ -85,7 +92,7 @@ function renderNeg(ls) {
   const rs = ls.filter(l => l.reciente);
   if (rs.length) {
     const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
-    $('negHint').textContent = `Temas criticados en ${fmt(n)} reseñas recientes con texto (de ${rs.length} ${rs.length === 1 ? 'local' : 'locales'}), de cualquier puntuación, clasificadas leyendo cada una. Una reseña puede tocar varios temas.`;
+    $('negHint').textContent = `Temas criticados en ${fmt(n)} reseñas con texto de los ${periodoTxt(rs)}, de cualquier puntuación, clasificadas leyendo cada una. Una reseña puede tocar varios temas.` + SIN_PREVIO;
     $('neg').innerHTML = '<div class="neg">' + bars(sumTemas(rs, 'negativos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
@@ -93,7 +100,7 @@ function renderNeg(ls) {
   const n = leidos.reduce((a, l) => a + l.muestraBajas, 0);
   const n12 = leidos.reduce((a, l) => a + l.bajas12m, 0);
   $('negHint').textContent = n
-    ? `Sobre ${fmt(n)} reseñas de 1 o 2 estrellas con texto, de ${leidos.length} ${leidos.length === 1 ? 'local leído' : 'locales leídos'} (${n12} de los últimos 12 meses). Una reseña puede tocar varios temas.`
+    ? `Lectura anterior, aún sin actualizar al periodo de los últimos 3 meses. Sobre ${fmt(n)} reseñas de 1 o 2 estrellas con texto, de ${leidos.length} ${leidos.length === 1 ? 'local leído' : 'locales leídos'} (${n12} de los últimos 12 meses). Una reseña puede tocar varios temas.`
     : 'Se leen las reseñas de 1 y 2 estrellas con texto de cada local.';
   if (!n) { $('neg').innerHTML = '<p class="empty">Lectura pendiente para esta selección.</p>'; return; }
   const m = {};
@@ -135,7 +142,7 @@ function renderKpi(ls) {
     cmp = `<span>Frente a la lectura del ${new Date(prev[0].previo.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })}: <b>${d >= 0 ? '+' : ''}${fmt1(d)}</b> (antes ${fmt1(pp)}, ${fmt(pn)} reseñas).</span>`;
   }
   el.innerHTML = `<h2>Indicador del trimestre</h2>
-    <p class="hint">Promedio de estrellas de las reseñas recientes leídas (hasta unos 3 meses, según lo que Maps deja cargar). Meta: igual o superior a ${fmt1(M.umbral)}. Es distinto del puntaje de Google, que acumula toda la historia y casi no se mueve.</p>
+    <p class="hint">Promedio de estrellas de todas las reseñas de los ${periodoTxt(rs)}. Meta: igual o superior a ${fmt1(M.umbral)}. Es distinto del puntaje de Google, que acumula toda la historia y casi no se mueve.</p>
     <div class="kpi"><div class="kpinum ${estado[0]}">${fmt1(p)}</div>
       <div class="kpimeta"><span class="tag ${estado[0]}">${estado[1]}</span> ${prov}
         <span><b>${fmt(n)}</b> reseñas leídas${rs.length > 1 ? ` en ${rs.length} locales` : ''}${ls.length > rs.length ? ` (faltan ${ls.length - rs.length} por leer)` : ''}.</span>
