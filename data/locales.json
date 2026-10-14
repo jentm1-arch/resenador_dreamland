@@ -731,7 +731,7 @@
     "4": 135,
     "5": 1214
    },
-   "leido": null,
+   "leido": "2026-10-14",
    "chips": [
     {
      "tema": "concepto",
@@ -748,12 +748,65 @@
     {
      "tema": "ambientado",
      "menciones": 21
+    },
+    {
+     "tema": "lavandería",
+     "menciones": 16
+    },
+    {
+     "tema": "original",
+     "menciones": 13
+    },
+    {
+     "tema": "trufada",
+     "menciones": 9
+    },
+    {
+     "tema": "estadio de mestalla",
+     "menciones": 5
     }
    ],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "muestraBajas": 47,
+   "bajas12m": 19,
+   "sinRespuesta12m": 4,
+   "quejas": {
+    "Calidad y sabor de la comida": {
+     "total": 9,
+     "ultimos12m": 7
+    },
+    "Comida fría o precocinada": {
+     "total": 8,
+     "ultimos12m": 3
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 14,
+     "ultimos12m": 3
+    },
+    "Delivery y recogida": {
+     "total": 7,
+     "ultimos12m": 3
+    },
+    "Precio y cobros": {
+     "total": 11,
+     "ultimos12m": 3
+    },
+    "Esperas y ritmo del servicio": {
+     "total": 8,
+     "ultimos12m": 2
+    },
+    "Limpieza y estado del local": {
+     "total": 6,
+     "ultimos12m": 2
+    },
+    "Reservas y espera para sentarse": {
+     "total": 4,
+     "ultimos12m": 0
+    },
+    "Atención del personal": {
+     "total": 2,
+     "ultimos12m": 0
+    }
+   }
   }
  ]
 }

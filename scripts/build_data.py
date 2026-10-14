@@ -6,7 +6,9 @@ for f in glob.glob('data/raw/*.json'):
     d = json.load(open(f, encoding='utf-8'))
     raw[d['local']] = d
 
-NOMBRES_PROPIOS = {'rodrigo', 'ester', 'aliá', 'felipe', 'emma', 'alexa', 'max', 'jesús', 'desi'}  # nombres del personal: no se publican
+NOMBRES_PROPIOS = {'rodrigo', 'ester', 'aliá', 'felipe', 'emma', 'alexa', 'max', 'jesús', 'desi', 'xavi', 'hundred'}  # nombres del personal: no se publican
+
+RENOMBRAR = {'lavadora': 'concepto lavadora'}  # concepto de lavandería de One Burger
 
 
 def limpiar(chips):
@@ -14,7 +16,7 @@ def limpiar(chips):
     for c in chips:
         p = c.rsplit(' ', 1)
         if len(p) == 2 and p[1].isdigit() and p[0].lower() not in NOMBRES_PROPIOS:
-            out.append({'tema': p[0], 'menciones': int(p[1])})
+            out.append({'tema': RENOMBRAR.get(p[0].lower(), p[0]), 'menciones': int(p[1])})
     return out
 
 
@@ -43,9 +45,6 @@ for marca, nombre, direccion, r, t, dist in LOCALES:
         e.update({'rating': d['rating'], 'total': d['total'], 'dist': d['dist'], 'leido': d['leido'],
                   'chips': limpiar(d['chips']), 'muestraBajas': d['muestraBajas'], 'bajas12m': d['bajas12m'],
                   'sinRespuesta12m': d['sinRespuesta12m'], 'quejas': d['quejas']})
-    if nombre == 'One Burger Valencia':
-        e['chips'] = [{'tema': 'concepto', 'menciones': 57}, {'tema': 'concepto lavadora', 'menciones': 53},
-                      {'tema': 'innovador', 'menciones': 22}, {'tema': 'ambientado', 'menciones': 21}]
     out.append(e)
 
 json.dump({'actualizado': '2026-10-14', 'locales': out}, open('data/locales.json', 'w', encoding='utf-8'),
