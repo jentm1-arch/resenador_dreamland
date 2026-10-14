@@ -95,13 +95,89 @@
    "direccion": "Av. de les Corts Valencianes, 26",
    "rating": 4.6,
    "total": 10993,
-   "dist": null,
-   "leido": null,
-   "chips": [],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "dist": {
+    "1": 319,
+    "2": 210,
+    "3": 491,
+    "4": 1819,
+    "5": 8154
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "croquetas",
+     "menciones": 200
+    },
+    {
+     "tema": "tortilla",
+     "menciones": 193
+    },
+    {
+     "tema": "trufada",
+     "menciones": 104
+    },
+    {
+     "tema": "menú del día",
+     "menciones": 102
+    },
+    {
+     "tema": "brioche",
+     "menciones": 68
+    },
+    {
+     "tema": "rabo de toro",
+     "menciones": 61
+    },
+    {
+     "tema": "puchero",
+     "menciones": 32
+    },
+    {
+     "tema": "chocolate blanco",
+     "menciones": 25
+    }
+   ],
+   "muestraBajas": 60,
+   "bajas12m": 32,
+   "sinRespuesta12m": 3,
+   "quejas": {
+    "Esperas y ritmo del servicio": {
+     "total": 25,
+     "ultimos12m": 13
+    },
+    "Atención del personal": {
+     "total": 23,
+     "ultimos12m": 12
+    },
+    "Delivery y recogida": {
+     "total": 4,
+     "ultimos12m": 2
+    },
+    "Comida fría o precocinada": {
+     "total": 12,
+     "ultimos12m": 7
+    },
+    "Reservas y espera para sentarse": {
+     "total": 19,
+     "ultimos12m": 10
+    },
+    "Precio y cobros": {
+     "total": 4,
+     "ultimos12m": 2
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 3,
+     "ultimos12m": 1
+    },
+    "Limpieza y estado del local": {
+     "total": 4,
+     "ultimos12m": 1
+    },
+    "Calidad y sabor de la comida": {
+     "total": 5,
+     "ultimos12m": 4
+    }
+   }
   },
   {
    "id": "voltereta-manhattan",
