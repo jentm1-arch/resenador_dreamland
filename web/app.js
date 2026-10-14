@@ -1,5 +1,5 @@
 const $ = id => document.getElementById(id);
-const fmt = n => n.toLocaleString('es-ES');
+const fmt = n => n.toLocaleString('es-ES', { useGrouping: 'always' });
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const MARCAS = ['Todas', 'Voltereta', 'Begin', 'One Burger'];
 let DATA = null;
