@@ -511,11 +511,54 @@
    "marca": "Begin",
    "local": "Begin Invernadero",
    "direccion": "C. de Ramon Llull, 1",
-   "rating": null,
-   "total": null,
-   "dist": null,
-   "leido": null,
-   "chips": [],
+   "rating": 4.6,
+   "total": 4402,
+   "dist": {
+    "1": 171,
+    "2": 106,
+    "3": 173,
+    "4": 610,
+    "5": 3342
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "menú degustación",
+     "menciones": 101
+    },
+    {
+     "tema": "dalí",
+     "menciones": 72
+    },
+    {
+     "tema": "ambientación",
+     "menciones": 55
+    },
+    {
+     "tema": "canelón",
+     "menciones": 45
+    },
+    {
+     "tema": "tataki",
+     "menciones": 41
+    },
+    {
+     "tema": "burrata",
+     "menciones": 29
+    },
+    {
+     "tema": "selva",
+     "menciones": 23
+    },
+    {
+     "tema": "tacos al pastor",
+     "menciones": 21
+    },
+    {
+     "tema": "bao",
+     "menciones": 20
+    }
+   ],
    "muestraBajas": 0,
    "bajas12m": 0,
    "sinRespuesta12m": 0,
