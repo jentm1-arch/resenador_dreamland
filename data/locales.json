@@ -1,0 +1,250 @@
+{
+ "actualizado": "2026-10-14",
+ "locales": [
+  {
+   "id": "voltereta-bali",
+   "marca": "Voltereta",
+   "local": "Voltereta Bali",
+   "direccion": "Gran Via del Marqués del Túria, 59",
+   "rating": 4.6,
+   "total": 24033,
+   "dist": {
+    "1": 824,
+    "2": 572,
+    "3": 1033,
+    "4": 3309,
+    "5": 18295
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "ambientación",
+     "menciones": 783
+    },
+    {
+     "tema": "menú degustación",
+     "menciones": 430
+    },
+    {
+     "tema": "selva",
+     "menciones": 96
+    },
+    {
+     "tema": "rabo de toro",
+     "menciones": 95
+    },
+    {
+     "tema": "trufada",
+     "menciones": 79
+    },
+    {
+     "tema": "uramaki",
+     "menciones": 55
+    },
+    {
+     "tema": "cerradura de tiempo",
+     "menciones": 11
+    }
+   ],
+   "muestraBajas": 88,
+   "bajas12m": 80,
+   "sinRespuesta12m": 8,
+   "quejas": {
+    "Esperas y ritmo del servicio": {
+     "total": 54,
+     "ultimos12m": 49
+    },
+    "Atención del personal": {
+     "total": 53,
+     "ultimos12m": 47
+    },
+    "Calidad y sabor de la comida": {
+     "total": 22,
+     "ultimos12m": 19
+    },
+    "Precio y cobros": {
+     "total": 18,
+     "ultimos12m": 15
+    },
+    "Reservas y espera para sentarse": {
+     "total": 37,
+     "ultimos12m": 34
+    },
+    "Comida fría o precocinada": {
+     "total": 34,
+     "ultimos12m": 31
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 17,
+     "ultimos12m": 16
+    },
+    "Limpieza y estado del local": {
+     "total": 5,
+     "ultimos12m": 5
+    },
+    "Delivery y recogida": {
+     "total": 1,
+     "ultimos12m": 0
+    }
+   }
+  },
+  {
+   "id": "voltereta-casa",
+   "marca": "Voltereta",
+   "local": "Voltereta Casa",
+   "direccion": "Av. de les Corts Valencianes, 26",
+   "rating": 4.6,
+   "total": 10993,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "voltereta-manhattan",
+   "marca": "Voltereta",
+   "local": "Voltereta Manhattan",
+   "direccion": "Carrer d'Isabel la Catòlica, 11",
+   "rating": 4.6,
+   "total": 14888,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "voltereta-kioto",
+   "marca": "Voltereta",
+   "local": "Voltereta Kioto",
+   "direccion": "Pg. de l'Albereda, 51",
+   "rating": 4.5,
+   "total": 15089,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "begin-origen",
+   "marca": "Begin",
+   "local": "Begin Origen",
+   "direccion": "Av. de les Corts Valencianes, 50",
+   "rating": 4.5,
+   "total": 7779,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "begin-profundidades-marinas",
+   "marca": "Begin",
+   "local": "Begin Profundidades Marinas",
+   "direccion": "C/ de Pascual i Genís, 11",
+   "rating": 4.6,
+   "total": 7668,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "begin-invernadero",
+   "marca": "Begin",
+   "local": "Begin Invernadero",
+   "direccion": "C. de Ramon Llull, 1",
+   "rating": null,
+   "total": null,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "begin-huerta",
+   "marca": "Begin",
+   "local": "Begin Huerta",
+   "direccion": "Paseo de la Alameda, 47",
+   "rating": null,
+   "total": null,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "begin-jardin-secreto",
+   "marca": "Begin",
+   "local": "Begin Jardín Secreto",
+   "direccion": "C. de Martínez Ferrando, 5",
+   "rating": null,
+   "total": null,
+   "dist": null,
+   "leido": null,
+   "chips": [],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  },
+  {
+   "id": "one-burger-valencia",
+   "marca": "One Burger",
+   "local": "One Burger Valencia",
+   "direccion": "Carrer de Misser Mascó, 42",
+   "rating": 4.5,
+   "total": 1549,
+   "dist": {
+    "1": 81,
+    "2": 43,
+    "3": 76,
+    "4": 135,
+    "5": 1214
+   },
+   "leido": null,
+   "chips": [
+    {
+     "tema": "concepto",
+     "menciones": 57
+    },
+    {
+     "tema": "lavadora",
+     "menciones": 53
+    },
+    {
+     "tema": "innovador",
+     "menciones": 22
+    },
+    {
+     "tema": "ambientado",
+     "menciones": 21
+    }
+   ],
+   "muestraBajas": 0,
+   "bajas12m": 0,
+   "sinRespuesta12m": 0,
+   "quejas": {}
+  }
+ ]
+}

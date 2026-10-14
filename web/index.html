@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reseñador Dreamland</title>
+<meta name="description" content="Prototipo independiente que resume las reseñas públicas de Google de Voltereta, Begin y One Burger en Valencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Reseñador</h1>
+      <p class="sub">Qué destacan y de qué se quejan los clientes de Voltereta, Begin y One Burger en Valencia, según las reseñas públicas de Google.</p>
+    </div>
+    <p class="badge">Prototipo independiente,<br>no oficial</p>
+  </header>
+
+  <section class="filters" aria-label="Filtros">
+    <div class="seg" role="group" aria-label="Marca" id="marcas"></div>
+    <label class="sel">Local
+      <select id="local"></select>
+    </label>
+  </section>
+
+  <section class="score" aria-live="polite">
+    <div class="big">
+      <div class="num" id="rating">–</div>
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="meta" id="ratingMeta"></div>
+    </div>
+    <div class="dist" id="dist" aria-label="Distribución de puntuaciones"></div>
+  </section>
+
+  <div class="cols">
+    <section class="card">
+      <h2>Lo que más destacan</h2>
+      <p class="hint">Temas que Google detecta en las reseñas, con el número de menciones.</p>
+      <div id="pos"></div>
+    </section>
+    <section class="card">
+      <h2>Quejas más repetidas</h2>
+      <p class="hint" id="negHint"></p>
+      <div id="neg"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Locales</h2>
+    <div class="scroll">
+      <table id="tabla">
+        <thead><tr><th>Local</th><th>Marca</th><th class="n">Puntaje</th><th class="n">Reseñas</th><th>Lectura de quejas</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details class="card method">
+    <summary>Cómo se obtienen los datos y sus límites</summary>
+    <ul>
+      <li>Fuente: fichas públicas de Google Maps. Puntaje y total son los que muestra Google.</li>
+      <li>Lo que destacan: temas que Google agrupa en cada ficha. Se omiten los que son nombres de personas.</li>
+      <li>Quejas: se leen las reseñas de 1 y 2 estrellas con texto más bajas de cada local, hasta unas 90, y se clasifican por tema con reglas automáticas. El porcentaje es sobre esa muestra, no sobre todas las reseñas.</li>
+      <li>No se guardan nombres de reseñadores ni textos de reseñas.</li>
+      <li>Son hipótesis para validar con datos internos, no un diagnóstico. La clasificación por reglas es preliminar; la versión semanal usará Claude.</li>
+      <li>Los locales marcados como "pendiente" aún no se han leído.</li>
+    </ul>
+  </details>
+
+  <footer>
+    <p id="actualizado"></p>
+    <p>Prototipo independiente creado por J Alejandra Trejos. No está afiliado a Dreamland, Voltereta, Begin ni One Burger. Solo usa colores de referencia.</p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
