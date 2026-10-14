@@ -569,11 +569,54 @@
    "marca": "Begin",
    "local": "Begin Huerta",
    "direccion": "Paseo de la Alameda, 47",
-   "rating": null,
-   "total": null,
-   "dist": null,
-   "leido": null,
-   "chips": [],
+   "rating": 4.5,
+   "total": 6279,
+   "dist": {
+    "1": 283,
+    "2": 160,
+    "3": 240,
+    "4": 743,
+    "5": 4853
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "menú degustación",
+     "menciones": 98
+    },
+    {
+     "tema": "canelón",
+     "menciones": 57
+    },
+    {
+     "tema": "carrillera",
+     "menciones": 47
+    },
+    {
+     "tema": "dalí",
+     "menciones": 45
+    },
+    {
+     "tema": "tataki",
+     "menciones": 32
+    },
+    {
+     "tema": "burrata",
+     "menciones": 31
+    },
+    {
+     "tema": "brioche",
+     "menciones": 28
+    },
+    {
+     "tema": "la coca",
+     "menciones": 17
+    },
+    {
+     "tema": "tacos al pastor",
+     "menciones": 13
+    }
+   ],
    "muestraBajas": 0,
    "bajas12m": 0,
    "sinRespuesta12m": 0,
