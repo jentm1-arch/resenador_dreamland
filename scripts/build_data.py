@@ -6,7 +6,7 @@ for f in glob.glob('data/raw/*.json'):
     d = json.load(open(f, encoding='utf-8'))
     raw[d['local']] = d
 
-NOMBRES_PROPIOS = {'rodrigo', 'ester', 'aliá', 'felipe', 'emma', 'alexa', 'max'}  # nombres del personal: no se publican
+NOMBRES_PROPIOS = {'rodrigo', 'ester', 'aliá', 'felipe', 'emma', 'alexa', 'max', 'jesús'}  # nombres del personal: no se publican
 
 
 def limpiar(chips):

@@ -273,13 +273,89 @@
    "direccion": "Pg. de l'Albereda, 51",
    "rating": 4.5,
    "total": 15089,
-   "dist": null,
-   "leido": null,
-   "chips": [],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "dist": {
+    "1": 688,
+    "2": 515,
+    "3": 824,
+    "4": 2291,
+    "5": 10771
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "ambientación",
+     "menciones": 620
+    },
+    {
+     "tema": "menú degustación",
+     "menciones": 420
+    },
+    {
+     "tema": "futurista",
+     "menciones": 345
+    },
+    {
+     "tema": "rabo de toro",
+     "menciones": 174
+    },
+    {
+     "tema": "bao",
+     "menciones": 170
+    },
+    {
+     "tema": "uramaki",
+     "menciones": 137
+    },
+    {
+     "tema": "brioche",
+     "menciones": 122
+    },
+    {
+     "tema": "dorayaki",
+     "menciones": 73
+    },
+    {
+     "tema": "kinder bueno",
+     "menciones": 38
+    }
+   ],
+   "muestraBajas": 60,
+   "bajas12m": 44,
+   "sinRespuesta12m": 4,
+   "quejas": {
+    "Reservas y espera para sentarse": {
+     "total": 20,
+     "ultimos12m": 14
+    },
+    "Atención del personal": {
+     "total": 21,
+     "ultimos12m": 15
+    },
+    "Comida fría o precocinada": {
+     "total": 11,
+     "ultimos12m": 9
+    },
+    "Esperas y ritmo del servicio": {
+     "total": 21,
+     "ultimos12m": 14
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 1,
+     "ultimos12m": 1
+    },
+    "Limpieza y estado del local": {
+     "total": 7,
+     "ultimos12m": 4
+    },
+    "Calidad y sabor de la comida": {
+     "total": 10,
+     "ultimos12m": 6
+    },
+    "Precio y cobros": {
+     "total": 12,
+     "ultimos12m": 3
+    }
+   }
   },
   {
    "id": "begin-origen",
