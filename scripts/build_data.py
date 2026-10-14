@@ -44,7 +44,7 @@ for marca, nombre, direccion, r, t, dist in LOCALES:
                   'chips': limpiar(d['chips']), 'muestraBajas': d['muestraBajas'], 'bajas12m': d['bajas12m'],
                   'sinRespuesta12m': d['sinRespuesta12m'], 'quejas': d['quejas']})
     if nombre == 'One Burger Valencia':
-        e['chips'] = [{'tema': 'concepto', 'menciones': 57}, {'tema': 'lavadora', 'menciones': 53},
+        e['chips'] = [{'tema': 'concepto', 'menciones': 57}, {'tema': 'concepto lavadora', 'menciones': 53},
                       {'tema': 'innovador', 'menciones': 22}, {'tema': 'ambientado', 'menciones': 21}]
     out.append(e)
 
