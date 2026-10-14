@@ -44,6 +44,44 @@
     "SEG": 1
    }
   },
+  "voltereta-kioto": {
+   "rating": 4.5,
+   "total": 15089,
+   "dist": {
+    "1": 688,
+    "2": 515,
+    "3": 824,
+    "4": 2291,
+    "5": 10771
+   },
+   "promedio": 4.19,
+   "leidas": 260,
+   "estrellas": {
+    "1": 18,
+    "2": 17,
+    "3": 22,
+    "4": 43,
+    "5": 160
+   },
+   "positivos": {
+    "AMB": 39,
+    "SAB": 25,
+    "ATE": 24,
+    "PRE": 7,
+    "CAR": 6,
+    "RIT": 1
+   },
+   "negativos": {
+    "SAB": 14,
+    "RIT": 8,
+    "LOC": 7,
+    "ATE": 5,
+    "RES": 4,
+    "CAR": 3,
+    "SEG": 1,
+    "AMB": 1
+   }
+  },
   "begin-origen": {
    "rating": 4.5,
    "total": 7779,

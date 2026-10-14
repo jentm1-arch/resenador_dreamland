@@ -397,6 +397,38 @@
      "total": 12,
      "ultimos12m": 3
     }
+   },
+   "reciente": {
+    "local": "Voltereta Kioto",
+    "meses": 2,
+    "leidas": 260,
+    "conTexto": 71,
+    "estrellas": {
+     "1": 18,
+     "2": 17,
+     "3": 22,
+     "4": 43,
+     "5": 160
+    },
+    "positivos": {
+     "AMB": 39,
+     "SAB": 25,
+     "ATE": 24,
+     "PRE": 7,
+     "CAR": 6,
+     "RIT": 1
+    },
+    "negativos": {
+     "SAB": 14,
+     "RIT": 8,
+     "LOC": 7,
+     "ATE": 5,
+     "RES": 4,
+     "CAR": 3,
+     "SEG": 1,
+     "AMB": 1
+    },
+    "promedio": 4.19
    }
   },
   {
