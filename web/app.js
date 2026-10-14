@@ -68,7 +68,7 @@ function renderPos(ls) {
 }
 
 function renderNeg(ls) {
-  const leidos = ls.filter(l => l.leido);
+  const leidos = ls.filter(l => l.leido && l.muestraBajas > 0);
   const n = leidos.reduce((a, l) => a + l.muestraBajas, 0);
   const n12 = leidos.reduce((a, l) => a + l.bajas12m, 0);
   $('negHint').textContent = n
@@ -84,7 +84,7 @@ function renderNeg(ls) {
 }
 
 function renderTable(pool) {
-  $('tabla').querySelector('tbody').innerHTML = pool.map(l => `<tr tabindex="0" data-id="${l.id}" class="${l.id === state.local ? 'on' : ''}"><td>${esc(l.local)}<br><small>${esc(l.direccion)}</small></td><td>${esc(l.marca)}</td><td class="n">${l.rating ? String(l.rating).replace('.', ',') : '–'}</td><td class="n">${l.total ? fmt(l.total) : '–'}</td><td><span class="tag ${l.leido ? 'ok' : ''}">${l.leido ? 'Leída' : 'Pendiente'}</span></td></tr>`).join('');
+  $('tabla').querySelector('tbody').innerHTML = pool.map(l => `<tr tabindex="0" data-id="${l.id}" class="${l.id === state.local ? 'on' : ''}"><td>${esc(l.local)}<br><small>${esc(l.direccion)}</small></td><td>${esc(l.marca)}</td><td class="n">${l.rating ? String(l.rating).replace('.', ',') : '–'}</td><td class="n">${l.total ? fmt(l.total) : '–'}</td><td><span class="tag ${l.muestraBajas ? 'ok' : ''}">${l.muestraBajas ? 'Leída' : 'Pendiente'}</span></td></tr>`).join('');
   $('tabla').querySelectorAll('tbody tr').forEach(tr => {
     const go = () => { state.local = tr.dataset.id; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
     tr.onclick = go; tr.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };

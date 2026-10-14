@@ -451,9 +451,56 @@
    "direccion": "C/ de Pascual i Genís, 11",
    "rating": 4.6,
    "total": 7668,
-   "dist": null,
-   "leido": null,
-   "chips": [],
+   "dist": {
+    "1": 270,
+    "2": 177,
+    "3": 329,
+    "4": 1057,
+    "5": 5835
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "menú degustación",
+     "menciones": 134
+    },
+    {
+     "tema": "jade",
+     "menciones": 93
+    },
+    {
+     "tema": "ambientación",
+     "menciones": 53
+    },
+    {
+     "tema": "canelón",
+     "menciones": 52
+    },
+    {
+     "tema": "tataki",
+     "menciones": 49
+    },
+    {
+     "tema": "burrata",
+     "menciones": 49
+    },
+    {
+     "tema": "carrillera",
+     "menciones": 45
+    },
+    {
+     "tema": "tacos al pastor",
+     "menciones": 28
+    },
+    {
+     "tema": "curry japonés",
+     "menciones": 17
+    },
+    {
+     "tema": "pizza carbonara",
+     "menciones": 12
+    }
+   ],
    "muestraBajas": 0,
    "bajas12m": 0,
    "sinRespuesta12m": 0,
