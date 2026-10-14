@@ -68,3 +68,9 @@ footer p{margin:0}
 .kpimeta{display:flex;flex-direction:column;gap:6px;align-items:flex-start;font-size:.92rem;max-width:60ch}
 .tag.ok{border-color:var(--bosque);color:var(--bosque)}.tag.vig{border-color:#8a6a12;color:#8a6a12}.tag.no{border-color:var(--terracota);color:var(--terracota)}
 .tag.prov{border-style:dashed}
+/* Estado del indicador: relleno y más visible */
+.kpimeta .tag.ok,.kpimeta .tag.vig,.kpimeta .tag.no{font-size:1rem;font-weight:600;padding:7px 16px;border-radius:99px;border-width:0;color:#fff}
+.kpimeta .tag.ok{background:#2e7d4f}
+.kpimeta .tag.vig{background:#b7791f}
+.kpimeta .tag.no{background:#c0392b}
+.kpinum.ok{color:#2e7d4f}.kpinum.vig{color:#b7791f}.kpinum.no{color:#c0392b}
