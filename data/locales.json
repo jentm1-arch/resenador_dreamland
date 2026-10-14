@@ -364,13 +364,85 @@
    "direccion": "Av. de les Corts Valencianes, 50",
    "rating": 4.5,
    "total": 7779,
-   "dist": null,
-   "leido": null,
-   "chips": [],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "dist": {
+    "1": 427,
+    "2": 212,
+    "3": 404,
+    "4": 986,
+    "5": 5750
+   },
+   "leido": "2026-10-14",
+   "chips": [
+    {
+     "tema": "menú degustación",
+     "menciones": 120
+    },
+    {
+     "tema": "QR",
+     "menciones": 72
+    },
+    {
+     "tema": "tataki",
+     "menciones": 65
+    },
+    {
+     "tema": "ambientación",
+     "menciones": 57
+    },
+    {
+     "tema": "burrata",
+     "menciones": 51
+    },
+    {
+     "tema": "canelón",
+     "menciones": 48
+    },
+    {
+     "tema": "mazorcas",
+     "menciones": 29
+    },
+    {
+     "tema": "bao",
+     "menciones": 23
+    },
+    {
+     "tema": "tacos al pastor",
+     "menciones": 17
+    },
+    {
+     "tema": "selva",
+     "menciones": 14
+    }
+   ],
+   "muestraBajas": 10,
+   "bajas12m": 9,
+   "sinRespuesta12m": 9,
+   "quejas": {
+    "Reservas y espera para sentarse": {
+     "total": 5,
+     "ultimos12m": 4
+    },
+    "Atención del personal": {
+     "total": 4,
+     "ultimos12m": 3
+    },
+    "Esperas y ritmo del servicio": {
+     "total": 4,
+     "ultimos12m": 3
+    },
+    "Precio y cobros": {
+     "total": 2,
+     "ultimos12m": 2
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 1,
+     "ultimos12m": 1
+    },
+    "Comida fría o precocinada": {
+     "total": 2,
+     "ultimos12m": 1
+    }
+   }
   },
   {
    "id": "begin-profundidades-marinas",
