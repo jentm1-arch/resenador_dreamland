@@ -1,6 +1,49 @@
 {
  "fecha": "2026-10-14",
  "locales": {
+  "voltereta-manhattan": {
+   "rating": 4.6,
+   "total": 14888,
+   "dist": {
+    "1": 494,
+    "2": 329,
+    "3": 621,
+    "4": 2060,
+    "5": 11384
+   },
+   "promedio": 4.54,
+   "leidas": 340,
+   "estrellas": {
+    "1": 17,
+    "2": 8,
+    "3": 12,
+    "4": 39,
+    "5": 264
+   },
+   "positivos": {
+    "ATE": 102,
+    "SAB": 78,
+    "AMB": 78,
+    "PRE": 12,
+    "RIT": 5,
+    "RES": 4,
+    "CAR": 4,
+    "LOC": 1,
+    "SEG": 1
+   },
+   "negativos": {
+    "ATE": 13,
+    "AMB": 10,
+    "RIT": 8,
+    "LOC": 6,
+    "CAR": 4,
+    "SAB": 4,
+    "PRE": 3,
+    "RES": 3,
+    "TEM": 2,
+    "SEG": 1
+   }
+  },
   "begin-origen": {
    "rating": 4.5,
    "total": 7779,

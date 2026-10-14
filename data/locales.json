@@ -269,6 +269,43 @@
      "total": 4,
      "ultimos12m": 4
     }
+   },
+   "reciente": {
+    "local": "Voltereta Manhattan",
+    "meses": 1,
+    "leidas": 340,
+    "conTexto": 181,
+    "estrellas": {
+     "1": 17,
+     "2": 8,
+     "3": 12,
+     "4": 39,
+     "5": 264
+    },
+    "positivos": {
+     "ATE": 102,
+     "SAB": 78,
+     "AMB": 78,
+     "PRE": 12,
+     "RIT": 5,
+     "RES": 4,
+     "CAR": 4,
+     "LOC": 1,
+     "SEG": 1
+    },
+    "negativos": {
+     "ATE": 13,
+     "AMB": 10,
+     "RIT": 8,
+     "LOC": 6,
+     "CAR": 4,
+     "SAB": 4,
+     "PRE": 3,
+     "RES": 3,
+     "TEM": 2,
+     "SEG": 1
+    },
+    "promedio": 4.54
    }
   },
   {
