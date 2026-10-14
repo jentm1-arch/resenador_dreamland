@@ -35,6 +35,22 @@ LOCALES = [
      {'1': 81, '2': 43, '3': 76, '4': 135, '5': 1214}),
 ]
 
+import os, datetime
+HOY = datetime.date.today().isoformat()
+UMBRAL = 4.5          # meta del KPI
+VIGILANCIA = 4.6      # entre 4,5 y 4,6: cumple pero en vigilancia
+MIN_RESENAS = 100     # por debajo, el dato se marca como provisional
+
+
+def prom(r):
+    n = sum(r['estrellas'].values())
+    return round(sum(int(k) * v for k, v in r['estrellas'].items()) / n, 2) if n else None
+
+
+# lectura anterior más reciente (anterior a hoy), para comparar
+previas = sorted(f for f in glob.glob('data/historial/20*.json') if os.path.basename(f)[:10] < HOY)
+previa = json.load(open(previas[-1], encoding='utf-8')) if previas else None
+
 out = []
 for marca, nombre, direccion, r, t, dist in LOCALES:
     e = {'id': nombre.lower().replace(' ', '-').replace('í', 'i'), 'marca': marca, 'local': nombre,
@@ -48,8 +64,20 @@ for marca, nombre, direccion, r, t, dist in LOCALES:
     import os
     rf='data/recent/'+e['id'].replace('í','i')+'.json'
     if os.path.exists(rf): e['reciente']=json.load(open(rf,encoding='utf-8'))
+    if 'reciente' in e:
+        e['reciente']['promedio'] = prom(e['reciente'])
+        p = previa and previa['locales'].get(e['id'])
+        if p:
+            e['previo'] = {'fecha': previa['fecha'], 'promedio': p['promedio'], 'leidas': p['leidas']}
     out.append(e)
 
-json.dump({'actualizado': '2026-10-14', 'locales': out}, open('data/locales.json', 'w', encoding='utf-8'),
+# foto de hoy (sin textos ni nombres): permite comparar entre lecturas
+snap = {'fecha': HOY, 'locales': {e['id']: {'rating': e['rating'], 'total': e['total'], 'dist': e['dist'],
+        'promedio': e['reciente']['promedio'], 'leidas': e['reciente']['leidas'], 'estrellas': e['reciente']['estrellas'],
+        'positivos': e['reciente']['positivos'], 'negativos': e['reciente']['negativos']}
+        for e in out if 'reciente' in e}}
+json.dump(snap, open(f'data/historial/{HOY}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+json.dump({'actualizado': HOY, 'meta': {'umbral': UMBRAL, 'vigilancia': VIGILANCIA, 'minResenas': MIN_RESENAS}, 'locales': out}, open('data/locales.json', 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
 print(len(out), 'locales;', 'leídos:', [e['local'] for e in out if e['leido']])

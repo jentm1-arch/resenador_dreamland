@@ -60,3 +60,11 @@ footer p{margin:0}
 .nota{border-style:dashed;font-size:.9rem;color:#3a3a36}
 .nota p{margin:0;max-width:80ch}
 #reciente h3{font-size:1rem;margin:12px 0 8px}
+
+#kpi h2{margin-bottom:6px}
+.kpi{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.kpinum{font-family:var(--serif);font-size:3.6rem;line-height:1;font-weight:500}
+.kpinum.ok{color:var(--bosque)}.kpinum.vig{color:#8a6a12}.kpinum.no{color:var(--terracota)}
+.kpimeta{display:flex;flex-direction:column;gap:6px;align-items:flex-start;font-size:.92rem;max-width:60ch}
+.tag.ok{border-color:var(--bosque);color:var(--bosque)}.tag.vig{border-color:#8a6a12;color:#8a6a12}.tag.no{border-color:var(--terracota);color:var(--terracota)}
+.tag.prov{border-style:dashed}

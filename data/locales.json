@@ -1,5 +1,10 @@
 {
  "actualizado": "2026-10-14",
+ "meta": {
+  "umbral": 4.5,
+  "vigilancia": 4.6,
+  "minResenas": 100
+ },
  "locales": [
   {
    "id": "voltereta-bali",
@@ -488,7 +493,8 @@
      "PRE": 4,
      "SEG": 4,
      "DEL": 3
-    }
+    },
+    "promedio": 4.64
    }
   },
   {
@@ -623,7 +629,8 @@
      "PRE": 2,
      "TEM": 2,
      "SEG": 1
-    }
+    },
+    "promedio": 4.68
    }
   },
   {
@@ -752,7 +759,8 @@
      "CAR": 2,
      "TEM": 1,
      "AMB": 1
-    }
+    },
+    "promedio": 4.17
    }
   },
   {
@@ -874,7 +882,8 @@
      "LOC": 3,
      "SAB": 2,
      "SEG": 1
-    }
+    },
+    "promedio": 4.58
    }
   },
   {

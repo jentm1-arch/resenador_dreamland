@@ -1,0 +1,169 @@
+{
+ "fecha": "2026-10-14",
+ "locales": {
+  "begin-origen": {
+   "rating": 4.5,
+   "total": 7779,
+   "dist": {
+    "1": 427,
+    "2": 212,
+    "3": 404,
+    "4": 986,
+    "5": 5750
+   },
+   "promedio": 4.64,
+   "leidas": 490,
+   "estrellas": {
+    "1": 19,
+    "2": 13,
+    "3": 14,
+    "4": 35,
+    "5": 409
+   },
+   "positivos": {
+    "ATE": 291,
+    "SAB": 198,
+    "AMB": 148,
+    "PRE": 34,
+    "CAR": 20,
+    "RIT": 19,
+    "LOC": 7,
+    "RES": 4
+   },
+   "negativos": {
+    "ATE": 24,
+    "LOC": 18,
+    "SAB": 16,
+    "CAR": 15,
+    "RIT": 15,
+    "RES": 9,
+    "TEM": 8,
+    "PRE": 4,
+    "SEG": 4,
+    "DEL": 3
+   }
+  },
+  "begin-profundidades-marinas": {
+   "rating": 4.6,
+   "total": 7668,
+   "dist": {
+    "1": 270,
+    "2": 177,
+    "3": 329,
+    "4": 1057,
+    "5": 5835
+   },
+   "promedio": 4.68,
+   "leidas": 580,
+   "estrellas": {
+    "1": 15,
+    "2": 7,
+    "3": 20,
+    "4": 62,
+    "5": 476
+   },
+   "positivos": {
+    "ATE": 98,
+    "SAB": 60,
+    "AMB": 38,
+    "CAR": 11,
+    "PRE": 10,
+    "RIT": 9,
+    "LOC": 2,
+    "RES": 1,
+    "TEM": 1
+   },
+   "negativos": {
+    "LOC": 10,
+    "ATE": 9,
+    "RIT": 8,
+    "SAB": 7,
+    "CAR": 5,
+    "RES": 4,
+    "AMB": 3,
+    "PRE": 2,
+    "TEM": 2,
+    "SEG": 1
+   }
+  },
+  "begin-invernadero": {
+   "rating": 4.6,
+   "total": 4402,
+   "dist": {
+    "1": 171,
+    "2": 106,
+    "3": 173,
+    "4": 610,
+    "5": 3342
+   },
+   "promedio": 4.17,
+   "leidas": 130,
+   "estrellas": {
+    "1": 14,
+    "2": 3,
+    "3": 12,
+    "4": 19,
+    "5": 82
+   },
+   "positivos": {
+    "ATE": 29,
+    "SAB": 18,
+    "AMB": 18,
+    "CAR": 4,
+    "RIT": 3,
+    "PRE": 2,
+    "TEM": 1,
+    "RES": 1
+   },
+   "negativos": {
+    "SAB": 10,
+    "LOC": 6,
+    "RES": 5,
+    "ATE": 5,
+    "PRE": 3,
+    "RIT": 2,
+    "CAR": 2,
+    "TEM": 1,
+    "AMB": 1
+   }
+  },
+  "begin-huerta": {
+   "rating": 4.5,
+   "total": 6279,
+   "dist": {
+    "1": 283,
+    "2": 160,
+    "3": 240,
+    "4": 743,
+    "5": 4853
+   },
+   "promedio": 4.58,
+   "leidas": 260,
+   "estrellas": {
+    "1": 9,
+    "2": 8,
+    "3": 10,
+    "4": 29,
+    "5": 204
+   },
+   "positivos": {
+    "SAB": 28,
+    "AMB": 17,
+    "ATE": 17,
+    "CAR": 6,
+    "PRE": 3,
+    "RES": 2,
+    "RIT": 1
+   },
+   "negativos": {
+    "ATE": 9,
+    "RES": 5,
+    "RIT": 4,
+    "CAR": 3,
+    "LOC": 3,
+    "SAB": 2,
+    "SEG": 1
+   }
+  }
+ }
+}

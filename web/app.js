@@ -33,7 +33,7 @@ function render() {
   $('local').innerHTML = '<option value="">Todos los locales' + (state.marca !== 'Todas' ? ' de ' + esc(state.marca) : '') + '</option>' +
     pool.map(l => `<option value="${l.id}" ${l.id === state.local ? 'selected' : ''}>${esc(l.local)}</option>`).join('');
   const ls = selected();
-  renderScore(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
+  renderScore(ls); renderKpi(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
 }
 
 function renderScore(ls) {
@@ -115,3 +115,29 @@ function renderTable(pool) {
 const TEMAS = { ATE: 'Atención y trato del personal', RIT: 'Rapidez y esperas', RES: 'Reservas y mesa', SAB: 'Sabor y calidad de la comida', TEM: 'Temperatura de la comida', SEG: 'Seguridad alimentaria y alérgenos', CAR: 'Carta, menú y raciones', PRE: 'Precio y cuenta', AMB: 'Ambiente y decoración', LOC: 'Comodidad y limpieza del local', DEL: 'Delivery y pedidos' };
 
 
+
+function renderKpi(ls) {
+  const el = $('kpi'), M = DATA.meta;
+  const rs = ls.filter(l => l.reciente);
+  if (!rs.length) { el.innerHTML = '<h2>Indicador del trimestre</h2><p class="empty">Lectura de reseñas recientes pendiente para esta selección.</p>'; return; }
+  const n = rs.reduce((a, l) => a + l.reciente.leidas, 0);
+  const suma = rs.reduce((a, l) => a + Object.entries(l.reciente.estrellas).reduce((b, [k, v]) => b + k * v, 0), 0);
+  const p = suma / n;
+  const estado = p < M.umbral ? ['no', 'Por debajo de la meta'] : p < M.vigilancia ? ['vig', 'Cumple, en vigilancia'] : ['ok', 'Cumple la meta'];
+  const fmt1 = x => x.toFixed(2).replace('.', ',');
+  const prov = n < M.minResenas ? `<span class="tag prov">Provisional: menos de ${M.minResenas} reseñas</span>` : '';
+  const prev = rs.filter(l => l.previo);
+  let cmp = '<span>Comparación con la lectura anterior: sin datos previos todavía. Se activa con la próxima actualización semanal, o de inmediato con acceso de propietario a Google Business Profile.</span>';
+  if (prev.length === rs.length) {
+    const pn = prev.reduce((a, l) => a + l.previo.leidas, 0);
+    const pp = prev.reduce((a, l) => a + l.previo.promedio * l.previo.leidas, 0) / pn;
+    const d = p - pp;
+    cmp = `<span>Frente a la lectura del ${new Date(prev[0].previo.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })}: <b>${d >= 0 ? '+' : ''}${fmt1(d)}</b> (antes ${fmt1(pp)}, ${fmt(pn)} reseñas).</span>`;
+  }
+  el.innerHTML = `<h2>Indicador del trimestre</h2>
+    <p class="hint">Promedio de estrellas de las reseñas recientes leídas (hasta unos 3 meses, según lo que Maps deja cargar). Meta: igual o superior a ${fmt1(M.umbral)}. Es distinto del puntaje de Google, que acumula toda la historia y casi no se mueve.</p>
+    <div class="kpi"><div class="kpinum ${estado[0]}">${fmt1(p)}</div>
+      <div class="kpimeta"><span class="tag ${estado[0]}">${estado[1]}</span> ${prov}
+        <span><b>${fmt(n)}</b> reseñas leídas${rs.length > 1 ? ` en ${rs.length} locales` : ''}${ls.length > rs.length ? ` (faltan ${ls.length - rs.length} por leer)` : ''}.</span>
+        ${cmp}</div></div>`;
+}
