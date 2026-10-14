@@ -56,3 +56,6 @@ tbody tr.on{background:rgba(41,61,51,.1)}
 footer{font-size:.82rem;color:#55554f;display:flex;flex-direction:column;gap:4px}
 footer p{margin:0}
 @media (prefers-reduced-motion:no-preference){.dfill,.bfill{transition:width .35s ease}}
+
+.nota{border-style:dashed;font-size:.9rem;color:#3a3a36}
+.nota p{margin:0;max-width:80ch}

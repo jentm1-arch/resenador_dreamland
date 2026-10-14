@@ -79,8 +79,8 @@ function renderNeg(ls) {
   leidos.forEach(l => Object.entries(l.quejas).forEach(([k, v]) => { m[k] = m[k] || { total: 0, u12: 0 }; m[k].total += v.total; m[k].u12 += v.ultimos12m; }));
   const items = Object.entries(m).sort((a, b) => b[1].total - a[1].total).slice(0, 8).map(([t, v]) => ({ t, v: v.total, u12: v.u12 }));
   const max = Math.max(...items.map(i => i.v), 1);
-  $('neg').innerHTML = '<div class="legend"><span><i style="background:rgba(146,67,33,.35)"></i>Toda la muestra</span><span><i style="background:var(--terracota)"></i>Últimos 12 meses</span></div><div class="neg">' +
-    items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${Math.round(i.v * 100 / n)}% de la muestra, ${i.u12} recientes</span></div><div class="btrack"><div class="bfill all" style="width:${i.v / max * 100}%"></div><div class="bfill rec" style="width:${i.u12 / max * 100}%"></div></div></div>`).join('') + '</div>';
+  $('neg').innerHTML = '<div class="legend"><span><i style="background:rgba(146,67,33,.35)"></i>Toda la muestra leída</span><span><i style="background:var(--terracota)"></i>De ellas, publicadas en los últimos 12 meses</span></div><div class="neg">' +
+    items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${Math.round(i.v * 100 / n)}% de las ${n} leídas, ${i.u12} en los últimos 12 meses</span></div><div class="btrack"><div class="bfill all" style="width:${i.v / max * 100}%"></div><div class="bfill rec" style="width:${i.u12 / max * 100}%"></div></div></div>`).join('') + '</div>';
 }
 
 function renderTable(pool) {
