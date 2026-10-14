@@ -1,6 +1,44 @@
 {
  "fecha": "2026-10-14",
  "locales": {
+  "voltereta-casa": {
+   "rating": 4.6,
+   "total": 10993,
+   "dist": {
+    "1": 319,
+    "2": 210,
+    "3": 491,
+    "4": 1819,
+    "5": 8154
+   },
+   "promedio": 4.62,
+   "leidas": 260,
+   "estrellas": {
+    "1": 4,
+    "2": 4,
+    "3": 12,
+    "4": 46,
+    "5": 194
+   },
+   "positivos": {
+    "ATE": 65,
+    "SAB": 45,
+    "AMB": 27,
+    "PRE": 6,
+    "CAR": 2,
+    "RIT": 1
+   },
+   "negativos": {
+    "CAR": 6,
+    "ATE": 4,
+    "SAB": 3,
+    "RES": 2,
+    "AMB": 2,
+    "RIT": 2,
+    "PRE": 1,
+    "LOC": 1
+   }
+  },
   "voltereta-manhattan": {
    "rating": 4.6,
    "total": 14888,

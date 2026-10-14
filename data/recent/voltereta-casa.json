@@ -1,0 +1,31 @@
+{
+ "local": "Voltereta Casa",
+ "meses": 2,
+ "leidas": 260,
+ "conTexto": 88,
+ "estrellas": {
+  "1": 4,
+  "2": 4,
+  "3": 12,
+  "4": 46,
+  "5": 194
+ },
+ "positivos": {
+  "ATE": 65,
+  "SAB": 45,
+  "AMB": 27,
+  "PRE": 6,
+  "CAR": 2,
+  "RIT": 1
+ },
+ "negativos": {
+  "CAR": 6,
+  "ATE": 4,
+  "SAB": 3,
+  "RES": 2,
+  "AMB": 2,
+  "RIT": 2,
+  "PRE": 1,
+  "LOC": 1
+ }
+}
