@@ -74,3 +74,11 @@ footer p{margin:0}
 .kpimeta .tag.vig{background:#b7791f}
 .kpimeta .tag.no{background:#c0392b}
 .kpinum.ok{color:#2e7d4f}.kpinum.vig{color:#b7791f}.kpinum.no{color:#c0392b}
+
+.hint:empty{display:none}
+.periodo{font-size:.95rem;color:var(--tinta)}
+.periodo p{margin:0}
+.periodo .pie{font-size:.85rem;color:#5a5a54;margin-top:2px}
+.periodo:empty{display:none}
+.kpinum small{font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:1rem;font-weight:400;color:#5a5a54;letter-spacing:0}
+.badge a{color:inherit;text-decoration:underline}

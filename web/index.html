@@ -17,9 +17,9 @@
   <header class="top">
     <div>
       <h1>Reseñador</h1>
-      <p class="sub">Qué destacan y de qué se quejan los clientes de Voltereta, Begin y One Burger en Valencia, según las reseñas públicas de Google.</p>
+      <p class="sub">Qué destacan y qué mejorarían los clientes de Voltereta, Begin y One Burger en Valencia, según las reseñas públicas de Google.</p>
     </div>
-    <p class="badge">Prototipo independiente,<br>no oficial</p>
+    <p class="badge">Prototipo creado por<br><a href="https://www.linkedin.com/in/jatrejosmarin/" target="_blank" rel="noopener">JA Trejos</a></p>
   </header>
 
   <section class="filters" aria-label="Filtros">
@@ -41,17 +41,19 @@
   <section class="card" id="kpi" aria-live="polite"></section>
 
   <aside class="card nota" aria-label="Límites de esta versión">
-    <p><b>Nota sobre la muestra.</b> En este prototipo solo se pueden leer unas decenas de reseñas por local desde la ficha pública de Google Maps, por restricciones de acceso. Por eso las quejas y los temas son una muestra orientativa y no el total. Con acceso de propietario al panel de Google Business Profile y su API, el barrido sería completo: todas las reseñas, de todas las estrellas, con respuesta y actualización semanal.</p>
+    <p>Esta versión lee solo lo que Google Maps muestra públicamente (los últimos 2-3 meses). Con acceso de propietario a Google Business Profile se leerían todas las reseñas, con fechas exactas y comparación entre periodos.</p>
   </aside>
+
+  <div class="periodo" id="periodo"></div>
 
   <div class="cols">
     <section class="card">
-      <h2>Lo que más destacan (positivo)</h2>
+      <h2>Lo que destacan positivamente los clientes</h2>
       <p class="hint" id="posHint"></p>
       <div id="pos"></div>
     </section>
     <section class="card">
-      <h2>Quejas más repetidas</h2>
+      <h2>Oportunidades de mejora según los clientes</h2>
       <p class="hint" id="negHint"></p>
       <div id="neg"></div>
     </section>
@@ -61,7 +63,7 @@
     <h2>Listado total de locales</h2>
     <div class="scroll">
       <table id="tabla">
-        <thead><tr><th>Local</th><th>Marca</th><th class="n">Puntaje</th><th class="n">Reseñas</th><th>Lectura de quejas</th></tr></thead>
+        <thead><tr><th>Local</th><th>Marca</th><th class="n">Puntaje</th><th class="n">Reseñas</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>

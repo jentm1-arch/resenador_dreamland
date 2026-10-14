@@ -17,7 +17,7 @@ function init() {
     state.marca = b.dataset.m; state.local = ''; render();
   };
   $('local').onchange = e => { state.local = e.target.value; render(); };
-  $('actualizado').textContent = 'Datos actualizados el ' + new Date(DATA.actualizado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) + '. Se refrescan cada semana.';
+  $('actualizado').textContent = 'Datos actualizados el ' + new Date(DATA.actualizado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
   render();
 }
 
@@ -33,7 +33,7 @@ function render() {
   $('local').innerHTML = '<option value="">Todos los locales' + (state.marca !== 'Todas' ? ' de ' + esc(state.marca) : '') + '</option>' +
     pool.map(l => `<option value="${l.id}" ${l.id === state.local ? 'selected' : ''}>${esc(l.local)}</option>`).join('');
   const ls = selected();
-  renderScore(ls); renderKpi(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
+  renderScore(ls); renderKpi(ls); renderPeriodo(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
 }
 
 function renderScore(ls) {
@@ -60,11 +60,8 @@ function bars(items, cls, valFmt) {
 }
 
 function periodoTxt(rs) {
-  const max = Math.max(...rs.map(l => l.reciente.meses));
-  const cortos = rs.filter(l => l.reciente.meses < max);
-  return `últimos ${max} meses` + (cortos.length ? ` (solo ${Math.min(...cortos.map(l => l.reciente.meses))} en ${cortos.map(l => l.local.replace(/^Begin /, '')).join(', ')}: es lo que Maps dejó cargar)` : '');
+  return `últimos ${Math.max(...rs.map(l => l.reciente.meses))} meses`;
 }
-const SIN_PREVIO = ' Comparación con periodos anteriores: sin datos previos todavía.';
 
 function sumTemas(rs, k, top = 6) {
   const m = {};
@@ -76,7 +73,7 @@ function renderPos(ls) {
   const rs = ls.filter(l => l.reciente);
   if (rs.length) {
     const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
-    $('posHint').textContent = `Temas elogiados en ${fmt(n)} reseñas con texto de los ${periodoTxt(rs)}, clasificadas leyendo cada una. Porcentaje sobre reseñas con texto; una reseña puede elogiar varios temas.` + SIN_PREVIO;
+    $('posHint').textContent = '';
     $('pos').innerHTML = '<div class="pos">' + bars(sumTemas(rs, 'positivos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
@@ -92,7 +89,7 @@ function renderNeg(ls) {
   const rs = ls.filter(l => l.reciente);
   if (rs.length) {
     const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
-    $('negHint').textContent = `Temas criticados en ${fmt(n)} reseñas con texto de los ${periodoTxt(rs)}, de cualquier puntuación, clasificadas leyendo cada una. Una reseña puede tocar varios temas.` + SIN_PREVIO;
+    $('negHint').textContent = '';
     $('neg').innerHTML = '<div class="neg">' + bars(sumTemas(rs, 'negativos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
@@ -112,7 +109,7 @@ function renderNeg(ls) {
 }
 
 function renderTable(pool) {
-  $('tabla').querySelector('tbody').innerHTML = pool.map(l => `<tr tabindex="0" data-id="${l.id}" class="${l.id === state.local ? 'on' : ''}"><td>${esc(l.local)}<br><small>${esc(l.direccion)}</small></td><td>${esc(l.marca)}</td><td class="n">${l.rating ? String(l.rating).replace('.', ',') : '–'}</td><td class="n">${l.total ? fmt(l.total) : '–'}</td><td><span class="tag ${l.muestraBajas ? 'ok' : ''}">${l.muestraBajas ? 'Leída' : 'Pendiente'}</span></td></tr>`).join('');
+  $('tabla').querySelector('tbody').innerHTML = pool.map(l => `<tr tabindex="0" data-id="${l.id}" class="${l.id === state.local ? 'on' : ''}"><td>${esc(l.local)}<br><small>${esc(l.direccion)}</small></td><td>${esc(l.marca)}</td><td class="n">${l.rating ? String(l.rating).replace('.', ',') : '–'}</td><td class="n">${l.total ? fmt(l.total) : '–'}</td></tr>`).join('');
   $('tabla').querySelectorAll('tbody tr').forEach(tr => {
     const go = () => { state.local = tr.dataset.id; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
     tr.onclick = go; tr.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };
@@ -126,7 +123,7 @@ const TEMAS = { ATE: 'Atención y trato del personal', RIT: 'Rapidez y esperas',
 function renderKpi(ls) {
   const el = $('kpi'), M = DATA.meta;
   const rs = ls.filter(l => l.reciente);
-  if (!rs.length) { el.innerHTML = '<h2>Indicador del trimestre</h2><p class="empty">Lectura de reseñas recientes pendiente para esta selección.</p>'; return; }
+  if (!rs.length) { el.innerHTML = '<h2>KPI del trimestre</h2><p class="empty">Lectura de reseñas recientes pendiente para esta selección.</p>'; return; }
   const n = rs.reduce((a, l) => a + l.reciente.leidas, 0);
   const suma = rs.reduce((a, l) => a + Object.entries(l.reciente.estrellas).reduce((b, [k, v]) => b + k * v, 0), 0);
   const p = suma / n;
@@ -134,17 +131,24 @@ function renderKpi(ls) {
   const fmt1 = x => x.toFixed(2).replace('.', ',');
   const prov = n < M.minResenas ? `<span class="tag prov">Provisional: menos de ${M.minResenas} reseñas</span>` : '';
   const prev = rs.filter(l => l.previo);
-  let cmp = '<span>Comparación con la lectura anterior: sin datos previos todavía. Se activa con la próxima actualización semanal, o de inmediato con acceso de propietario a Google Business Profile.</span>';
+  let cmp = '<span>Comparación con el periodo anterior: sin datos previos todavía.</span>';
   if (prev.length === rs.length) {
     const pn = prev.reduce((a, l) => a + l.previo.leidas, 0);
     const pp = prev.reduce((a, l) => a + l.previo.promedio * l.previo.leidas, 0) / pn;
     const d = p - pp;
     cmp = `<span>Frente a la lectura del ${new Date(prev[0].previo.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })}: <b>${d >= 0 ? '+' : ''}${fmt1(d)}</b> (antes ${fmt1(pp)}, ${fmt(pn)} reseñas).</span>`;
   }
-  el.innerHTML = `<h2>Indicador del trimestre</h2>
-    <p class="hint">Promedio de estrellas de todas las reseñas de los ${periodoTxt(rs)}. Meta: igual o superior a ${fmt1(M.umbral)}. Es distinto del puntaje de Google, que acumula toda la historia y casi no se mueve.</p>
-    <div class="kpi"><div class="kpinum ${estado[0]}">${fmt1(p)}</div>
+  el.innerHTML = `<h2>KPI del trimestre</h2>
+    <p class="hint">Promedio de los ${periodoTxt(rs)}. Meta: ${fmt1(M.umbral)} o más.</p>
+    <div class="kpi"><div class="kpinum ${estado[0]}">${fmt1(p)}<small> sobre 5</small></div>
       <div class="kpimeta"><span class="tag ${estado[0]}">${estado[1]}</span> ${prov}
         <span><b>${fmt(n)}</b> reseñas leídas${rs.length > 1 ? ` en ${rs.length} locales` : ''}${ls.length > rs.length ? ` (faltan ${ls.length - rs.length} por leer)` : ''}.</span>
         ${cmp}</div></div>`;
+}
+
+function renderPeriodo(ls) {
+  const rs = ls.filter(l => l.reciente), el = $('periodo');
+  if (!rs.length) { el.innerHTML = ''; return; }
+  const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
+  el.innerHTML = `<p><b>Periodo:</b> ${Math.max(...rs.map(l => l.reciente.meses))} meses · <b>Reseñas con texto:</b> ${fmt(n)}</p><p class="pie">Una reseña puede mencionar varios temas, por eso los porcentajes no suman 100%.</p>`;
 }
