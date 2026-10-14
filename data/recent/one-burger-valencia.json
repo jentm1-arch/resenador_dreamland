@@ -1,0 +1,20 @@
+{
+ "local": "One Burger Valencia",
+ "meses": 3,
+ "leidas": 96,
+ "conTexto": 29,
+ "estrellas": {
+  "1": 7,
+  "2": 2,
+  "3": 1,
+  "4": 2,
+  "5": 84
+ },
+ "positivos": {
+  "SAB": 21,
+  "ATE": 10,
+  "AMB": 7,
+  "PRE": 1
+ },
+ "negativos": {}
+}
