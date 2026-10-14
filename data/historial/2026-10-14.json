@@ -164,6 +164,47 @@
     "SAB": 2,
     "SEG": 1
    }
+  },
+  "begin-jardin-secreto": {
+   "rating": 4.5,
+   "total": 4389,
+   "dist": {
+    "1": 223,
+    "2": 93,
+    "3": 131,
+    "4": 554,
+    "5": 3388
+   },
+   "promedio": 4.61,
+   "leidas": 260,
+   "estrellas": {
+    "1": 12,
+    "2": 3,
+    "3": 7,
+    "4": 30,
+    "5": 208
+   },
+   "positivos": {
+    "ATE": 80,
+    "SAB": 56,
+    "AMB": 33,
+    "PRE": 9,
+    "CAR": 7,
+    "RES": 3,
+    "RIT": 3
+   },
+   "negativos": {
+    "ATE": 9,
+    "SAB": 5,
+    "RIT": 4,
+    "LOC": 4,
+    "CAR": 3,
+    "RES": 3,
+    "AMB": 2,
+    "PRE": 2,
+    "TEM": 1,
+    "SEG": 1
+   }
   }
  }
 }

@@ -979,6 +979,41 @@
      "total": 2,
      "ultimos12m": 2
     }
+   },
+   "reciente": {
+    "local": "Begin Jardín Secreto",
+    "ventana": "últimos ~2 meses (lo que Maps deja cargar)",
+    "leidas": 260,
+    "conTexto": 111,
+    "estrellas": {
+     "1": 12,
+     "2": 3,
+     "3": 7,
+     "4": 30,
+     "5": 208
+    },
+    "positivos": {
+     "ATE": 80,
+     "SAB": 56,
+     "AMB": 33,
+     "PRE": 9,
+     "CAR": 7,
+     "RES": 3,
+     "RIT": 3
+    },
+    "negativos": {
+     "ATE": 9,
+     "SAB": 5,
+     "RIT": 4,
+     "LOC": 4,
+     "CAR": 3,
+     "RES": 3,
+     "AMB": 2,
+     "PRE": 2,
+     "TEM": 1,
+     "SEG": 1
+    },
+    "promedio": 4.61
    }
   },
   {
