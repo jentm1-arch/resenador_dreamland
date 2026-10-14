@@ -2,3 +2,7 @@ node_modules/
 .env
 *.log
 .DS_Store
+
+# Textos de reseñas para la prueba de modelos: solo en local, nunca en el repo
+benchmark/muestra.json
+benchmark/resultados*.json

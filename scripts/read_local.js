@@ -23,6 +23,7 @@ const sc=[...document.querySelectorAll('div')].filter(d=>d.scrollHeight>d.client
 for(let i=0;i<7;i++){sc.scrollTo(0,sc.scrollHeight);await sleep(1400);}
 [...document.querySelectorAll('button.w8nwRe')].forEach(b=>b.click());await sleep(700);
 const rv=[...document.querySelectorAll('div.jftiEf[data-review-id]')].map(e=>{const own=e.querySelector('.CDe7pd');const t=[...e.querySelectorAll('.wiI7pd')].filter(x=>!own||!own.contains(x))[0];return{s:parseInt((e.querySelector('[role="img"][aria-label*="estrella"]')||{}).ariaLabel)||null,w:((e.querySelector('.rsqaWe')||{}).textContent||'').replace('Fecha de edición: ',''),own:!!own,t:((t||{}).textContent||'').trim()}}).filter(r=>r.t&&r.s<=2);
+window.__rv=rv.map(r=>({s:r.s,t:r.t})); // solo en memoria de la pestaña, para la prueba de modelos; no se guarda
 const q={};let sinResp12=0,neg12=0;
 rv.forEach(r=>{const m=meses(r.w);const rec=m<=12;if(rec){neg12++;if(!r.own)sinResp12++}Object.entries(RULES).filter(([k,x])=>x.test(r.t)).forEach(([k])=>{q[k]=q[k]||{total:0,ultimos12m:0};q[k].total++;if(rec)q[k].ultimos12m++})});
 return JSON.stringify({titulo:document.title,dist,chips,muestraBajas:rv.length,bajas12m:neg12,sinRespuesta12m:sinResp12,quejas:q});
