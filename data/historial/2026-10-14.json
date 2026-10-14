@@ -1,6 +1,48 @@
 {
  "fecha": "2026-10-14",
  "locales": {
+  "voltereta-bali": {
+   "rating": 4.6,
+   "total": 24033,
+   "dist": {
+    "1": 824,
+    "2": 572,
+    "3": 1033,
+    "4": 3309,
+    "5": 18295
+   },
+   "promedio": 4.35,
+   "leidas": 260,
+   "estrellas": {
+    "1": 18,
+    "2": 10,
+    "3": 18,
+    "4": 30,
+    "5": 184
+   },
+   "positivos": {
+    "SAB": 66,
+    "AMB": 58,
+    "ATE": 55,
+    "CAR": 15,
+    "PRE": 13,
+    "RES": 6,
+    "LOC": 2,
+    "RIT": 1
+   },
+   "negativos": {
+    "SAB": 16,
+    "ATE": 15,
+    "PRE": 11,
+    "CAR": 10,
+    "RIT": 10,
+    "SEG": 4,
+    "RES": 3,
+    "LOC": 3,
+    "TEM": 3,
+    "AMB": 2
+   }
+  },
   "voltereta-casa": {
    "rating": 4.6,
    "total": 10993,
