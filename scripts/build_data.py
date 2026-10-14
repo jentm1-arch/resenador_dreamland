@@ -45,6 +45,9 @@ for marca, nombre, direccion, r, t, dist in LOCALES:
         e.update({'rating': d['rating'], 'total': d['total'], 'dist': d['dist'], 'leido': d['leido'],
                   'chips': limpiar(d['chips']), 'muestraBajas': d['muestraBajas'], 'bajas12m': d['bajas12m'],
                   'sinRespuesta12m': d['sinRespuesta12m'], 'quejas': d['quejas']})
+    import os
+    rf='data/recent/'+e['id'].replace('í','i')+'.json'
+    if os.path.exists(rf): e['reciente']=json.load(open(rf,encoding='utf-8'))
     out.append(e)
 
 json.dump({'actualizado': '2026-10-14', 'locales': out}, open('data/locales.json', 'w', encoding='utf-8'),

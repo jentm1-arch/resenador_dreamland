@@ -6,3 +6,4 @@ node_modules/
 # Textos de reseñas para la prueba de modelos: solo en local, nunca en el repo
 benchmark/muestra.json
 benchmark/resultados*.json
+benchmark/etiquetas/
