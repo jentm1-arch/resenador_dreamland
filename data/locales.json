@@ -501,10 +501,47 @@
      "menciones": 12
     }
    ],
-   "muestraBajas": 0,
-   "bajas12m": 0,
-   "sinRespuesta12m": 0,
-   "quejas": {}
+   "muestraBajas": 60,
+   "bajas12m": 46,
+   "sinRespuesta12m": 37,
+   "quejas": {
+    "Esperas y ritmo del servicio": {
+     "total": 26,
+     "ultimos12m": 20
+    },
+    "Reservas y espera para sentarse": {
+     "total": 15,
+     "ultimos12m": 12
+    },
+    "Atención del personal": {
+     "total": 24,
+     "ultimos12m": 19
+    },
+    "Comida fría o precocinada": {
+     "total": 10,
+     "ultimos12m": 10
+    },
+    "Cocción y seguridad alimentaria": {
+     "total": 7,
+     "ultimos12m": 6
+    },
+    "Limpieza y estado del local": {
+     "total": 9,
+     "ultimos12m": 7
+    },
+    "Calidad y sabor de la comida": {
+     "total": 7,
+     "ultimos12m": 7
+    },
+    "Precio y cobros": {
+     "total": 10,
+     "ultimos12m": 9
+    },
+    "Delivery y recogida": {
+     "total": 3,
+     "ultimos12m": 3
+    }
+   }
   },
   {
    "id": "begin-invernadero",
