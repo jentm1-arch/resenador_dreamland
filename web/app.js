@@ -33,7 +33,7 @@ function render() {
   $('local').innerHTML = '<option value="">Todos los locales' + (state.marca !== 'Todas' ? ' de ' + esc(state.marca) : '') + '</option>' +
     pool.map(l => `<option value="${l.id}" ${l.id === state.local ? 'selected' : ''}>${esc(l.local)}</option>`).join('');
   const ls = selected();
-  renderScore(ls); renderReciente(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
+  renderScore(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
 }
 
 function renderScore(ls) {
@@ -59,7 +59,21 @@ function bars(items, cls, valFmt) {
   return items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${valFmt(i)}</span></div><div class="btrack" title="${esc(i.t)}"><div class="bfill ${cls}" style="width:${i.v / max * 100}%"></div></div></div>`).join('');
 }
 
+function sumTemas(rs, k, top = 6) {
+  const m = {};
+  rs.forEach(l => Object.entries(l.reciente[k]).forEach(([t, v]) => { m[t] = (m[t] || 0) + v; }));
+  return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, top).map(([t, v]) => ({ t: TEMAS[t] || t, v }));
+}
+
 function renderPos(ls) {
+  const rs = ls.filter(l => l.reciente);
+  if (rs.length) {
+    const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
+    $('posHint').textContent = `Temas elogiados en ${fmt(n)} reseñas recientes con texto (de ${rs.length} ${rs.length === 1 ? 'local' : 'locales'}), clasificadas leyendo cada una. Porcentaje sobre reseñas con texto; una reseña puede elogiar varios temas.`;
+    $('pos').innerHTML = '<div class="pos">' + bars(sumTemas(rs, 'positivos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
+    return;
+  }
+  $('posHint').textContent = 'Temas que Google detecta en las reseñas de toda la ficha (sin distinguir tono). Lectura de reseñas recientes pendiente para esta selección.';
   const m = {};
   ls.forEach(l => l.chips.forEach(c => { m[c.tema] = (m[c.tema] || 0) + c.menciones; }));
   const items = Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([t, v]) => ({ t, v }));
@@ -68,6 +82,13 @@ function renderPos(ls) {
 }
 
 function renderNeg(ls) {
+  const rs = ls.filter(l => l.reciente);
+  if (rs.length) {
+    const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
+    $('negHint').textContent = `Temas criticados en ${fmt(n)} reseñas recientes con texto (de ${rs.length} ${rs.length === 1 ? 'local' : 'locales'}), de cualquier puntuación, clasificadas leyendo cada una. Una reseña puede tocar varios temas.`;
+    $('neg').innerHTML = '<div class="neg">' + bars(sumTemas(rs, 'negativos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
+    return;
+  }
   const leidos = ls.filter(l => l.leido && l.muestraBajas > 0);
   const n = leidos.reduce((a, l) => a + l.muestraBajas, 0);
   const n12 = leidos.reduce((a, l) => a + l.bajas12m, 0);
@@ -93,13 +114,4 @@ function renderTable(pool) {
 
 const TEMAS = { ATE: 'Atención y trato del personal', RIT: 'Rapidez y esperas', RES: 'Reservas y mesa', SAB: 'Sabor y calidad de la comida', TEM: 'Temperatura de la comida', SEG: 'Seguridad alimentaria y alérgenos', CAR: 'Carta, menú y raciones', PRE: 'Precio y cuenta', AMB: 'Ambiente y decoración', LOC: 'Comodidad y limpieza del local', DEL: 'Delivery y pedidos' };
 
-function renderReciente(ls) {
-  const rs = ls.filter(l => l.reciente);
-  const el = $('reciente');
-  if (!rs.length) { el.innerHTML = '<h2>Positivo y negativo, reseñas recientes</h2><p class="empty">Lectura pendiente para esta selección.</p>'; return; }
-  const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
-  const tot = rs.reduce((a, l) => a + l.reciente.leidas, 0);
-  const sum = k => { const m = {}; rs.forEach(l => Object.entries(l.reciente[k]).forEach(([t, v]) => { m[t] = (m[t] || 0) + v; })); return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([t, v]) => ({ t: TEMAS[t] || t, v })); };
-  const col = (k, cls) => bars(sum(k), cls, i => Math.round(i.v * 100 / n) + '% (' + i.v + ')');
-  el.innerHTML = `<h2>Positivo y negativo, reseñas recientes</h2><p class="hint">Clasificadas leyendo cada reseña con texto (${fmt(n)} de ${fmt(tot)} leídas, de ${rs.length} ${rs.length === 1 ? 'local' : 'locales'}), las más recientes que Maps deja cargar (unos 3 meses). Porcentaje sobre reseñas con texto; una reseña puede tocar varios temas y ser positiva en uno y negativa en otro.</p><div class="cols"><div><h3>Lo positivo</h3><div class="pos">${col('positivos', 'all')}</div></div><div><h3>Lo negativo</h3><div class="neg">${col('negativos', 'all')}</div></div></div>`;
-}
+
