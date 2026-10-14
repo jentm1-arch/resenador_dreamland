@@ -1,0 +1,11 @@
+/* Paleta tomada de dreamlandcoworking.com (valores leídos de su CSS el 14/10/2026).
+   Prototipo independiente, no oficial. Para cambiar la paleta, edita solo este archivo. */
+:root{
+  --crema:#eae6dc;      /* fondo principal */
+  --arena:#d4c9b8;      /* superficies y líneas */
+  --bosque:#293d33;     /* verde oscuro, acento principal */
+  --terracota:#924321;  /* acento secundario */
+  --tinta:#000000;
+  --blanco:#ffffff;
+  --serif:"PP Editorial New","Cormorant Garamond",Times,serif; /* PP Editorial New es de pago; Cormorant como alternativa libre */
+}
