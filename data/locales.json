@@ -844,6 +844,37 @@
      "total": 5,
      "ultimos12m": 5
     }
+   },
+   "reciente": {
+    "local": "Begin Huerta",
+    "ventana": "últimos ~3 meses (lo que Maps deja cargar)",
+    "leidas": 260,
+    "conTexto": 44,
+    "estrellas": {
+     "1": 9,
+     "2": 8,
+     "3": 10,
+     "4": 29,
+     "5": 204
+    },
+    "positivos": {
+     "SAB": 28,
+     "AMB": 17,
+     "ATE": 17,
+     "CAR": 6,
+     "PRE": 3,
+     "RES": 2,
+     "RIT": 1
+    },
+    "negativos": {
+     "ATE": 9,
+     "RES": 5,
+     "RIT": 4,
+     "CAR": 3,
+     "LOC": 3,
+     "SAB": 2,
+     "SEG": 1
+    }
    }
   },
   {
