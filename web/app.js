@@ -86,9 +86,9 @@ function renderNeg(ls) {
     const n = rs.reduce((a, l) => a + l.reciente.conTexto, 0);
     $('negHint').textContent = '';
     const it = sumTemas(rs, 'negativos');
-    const sin = rs.reduce((a, l) => a + (l.reciente.estrellas[1] + l.reciente.estrellas[2] + l.reciente.estrellas[3]) , 0);
+    const sin = rs.reduce((a, l) => a + (l.reciente.estrellas[1] + l.reciente.estrellas[2]) , 0);
     $('neg').innerHTML = it.length ? '<div class="neg">' + bars(it, 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>'
-      : '<p class="empty">Ninguna reseña con texto de los últimos 3 meses señala aspectos a mejorar.' + (sin ? ` Hay ${sin} reseñas de 1 a 3 estrellas, pero sin comentario.` : '') + '</p>';
+      : '<p class="empty">Ninguna reseña con texto de los últimos 3 meses señala aspectos a mejorar.' + (sin ? ` Hay ${sin} reseñas de 1 o 2 estrellas, pero sin comentario.` : '') + '</p>';
     return;
   }
   $('neg').innerHTML = '<p class="empty">Reseñas de los últimos 3 meses pendientes de leer para esta selección.</p>';
