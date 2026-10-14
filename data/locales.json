@@ -588,6 +588,42 @@
      "total": 3,
      "ultimos12m": 3
     }
+   },
+   "reciente": {
+    "local": "Begin Profundidades Marinas",
+    "ventana": "últimos ~3 meses (lo que Maps deja cargar)",
+    "leidas": 580,
+    "conTexto": 137,
+    "estrellas": {
+     "1": 15,
+     "2": 7,
+     "3": 20,
+     "4": 62,
+     "5": 476
+    },
+    "positivos": {
+     "ATE": 98,
+     "SAB": 60,
+     "AMB": 38,
+     "CAR": 11,
+     "PRE": 10,
+     "RIT": 9,
+     "LOC": 2,
+     "RES": 1,
+     "TEM": 1
+    },
+    "negativos": {
+     "LOC": 10,
+     "ATE": 9,
+     "RIT": 8,
+     "SAB": 7,
+     "CAR": 5,
+     "RES": 4,
+     "AMB": 3,
+     "PRE": 2,
+     "TEM": 2,
+     "SEG": 1
+    }
    }
   },
   {
