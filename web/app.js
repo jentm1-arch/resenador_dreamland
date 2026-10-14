@@ -33,7 +33,7 @@ function render() {
   $('local').innerHTML = '<option value="">Todos los locales' + (state.marca !== 'Todas' ? ' de ' + esc(state.marca) : '') + '</option>' +
     pool.map(l => `<option value="${l.id}" ${l.id === state.local ? 'selected' : ''}>${esc(l.local)}</option>`).join('');
   const ls = selected();
-  renderScore(ls); renderPos(ls); renderNeg(ls);
+  renderScore(ls); renderPos(ls); renderNeg(ls); renderTable(pool);
 }
 
 function renderScore(ls) {
@@ -104,6 +104,13 @@ function renderNeg(ls) {
     items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${Math.round(i.v * 100 / n)}% de las ${n} leídas, ${i.u12} en los últimos 12 meses</span></div><div class="btrack"><div class="bfill all" style="width:${i.v / max * 100}%"></div><div class="bfill rec" style="width:${i.u12 / max * 100}%"></div></div></div>`).join('') + '</div>';
 }
 
+function renderTable(pool) {
+  $('tabla').querySelector('tbody').innerHTML = pool.map(l => `<tr tabindex="0" data-id="${l.id}" class="${l.id === state.local ? 'on' : ''}"><td>${esc(l.local)}<br><small>${esc(l.direccion)}</small></td><td>${esc(l.marca)}</td><td class="n">${l.rating ? String(l.rating).replace('.', ',') : '–'}</td><td class="n">${l.total ? fmt(l.total) : '–'}</td><td><span class="tag ${l.muestraBajas ? 'ok' : ''}">${l.muestraBajas ? 'Leída' : 'Pendiente'}</span></td></tr>`).join('');
+  $('tabla').querySelectorAll('tbody tr').forEach(tr => {
+    const go = () => { state.local = tr.dataset.id; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    tr.onclick = go; tr.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };
+  });
+}
 
 const TEMAS = { ATE: 'Atención y trato del personal', RIT: 'Rapidez y esperas', RES: 'Reservas y mesa', SAB: 'Sabor y calidad de la comida', TEM: 'Temperatura de la comida', SEG: 'Seguridad alimentaria y alérgenos', CAR: 'Carta, menú y raciones', PRE: 'Precio y cuenta', AMB: 'Ambiente y decoración', LOC: 'Comodidad y limpieza del local', DEL: 'Delivery y pedidos' };
 
