@@ -77,12 +77,7 @@ function renderPos(ls) {
     $('pos').innerHTML = '<div class="pos">' + bars(sumTemas(rs, 'positivos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
-  $('posHint').textContent = 'Temas que Google detecta en las reseñas de toda la ficha (sin distinguir tono). Lectura de reseñas pendiente para esta selección.';
-  const m = {};
-  ls.forEach(l => l.chips.forEach(c => { m[c.tema] = (m[c.tema] || 0) + c.menciones; }));
-  const items = Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([t, v]) => ({ t, v }));
-  $('pos').innerHTML = items.length ? '<div class="pos">' + bars(items, 'all', i => fmt(i.v) + ' menciones') + '</div>'
-    : '<p class="empty">Aún no hay temas leídos para esta selección.</p>';
+  $('pos').innerHTML = '<p class="empty">Reseñas de los últimos 3 meses pendientes de leer para esta selección.</p>';
 }
 
 function renderNeg(ls) {
@@ -93,19 +88,7 @@ function renderNeg(ls) {
     $('neg').innerHTML = '<div class="neg">' + bars(sumTemas(rs, 'negativos'), 'all', i => Math.round(i.v * 100 / n) + '% (' + i.v + ')') + '</div>';
     return;
   }
-  const leidos = ls.filter(l => l.leido && l.muestraBajas > 0);
-  const n = leidos.reduce((a, l) => a + l.muestraBajas, 0);
-  const n12 = leidos.reduce((a, l) => a + l.bajas12m, 0);
-  $('negHint').textContent = n
-    ? `Lectura anterior, aún sin actualizar al periodo de los últimos 3 meses. Sobre ${fmt(n)} reseñas de 1 o 2 estrellas con texto, de ${leidos.length} ${leidos.length === 1 ? 'local leído' : 'locales leídos'} (${n12} de los últimos 12 meses). Una reseña puede tocar varios temas.`
-    : 'Se leen las reseñas de 1 y 2 estrellas con texto de cada local.';
-  if (!n) { $('neg').innerHTML = '<p class="empty">Lectura pendiente para esta selección.</p>'; return; }
-  const m = {};
-  leidos.forEach(l => Object.entries(l.quejas).forEach(([k, v]) => { m[k] = m[k] || { total: 0, u12: 0 }; m[k].total += v.total; m[k].u12 += v.ultimos12m; }));
-  const items = Object.entries(m).sort((a, b) => b[1].total - a[1].total).slice(0, 8).map(([t, v]) => ({ t, v: v.total, u12: v.u12 }));
-  const max = Math.max(...items.map(i => i.v), 1);
-  $('neg').innerHTML = '<div class="legend"><span><i style="background:rgba(146,67,33,.35)"></i>Toda la muestra leída</span><span><i style="background:var(--terracota)"></i>De ellas, publicadas en los últimos 12 meses</span></div><div class="neg">' +
-    items.map(i => `<div class="brow"><div class="bhead"><b>${esc(i.t)}</b><span>${Math.round(i.v * 100 / n)}% de las ${n} leídas, ${i.u12} en los últimos 12 meses</span></div><div class="btrack"><div class="bfill all" style="width:${i.v / max * 100}%"></div><div class="bfill rec" style="width:${i.u12 / max * 100}%"></div></div></div>`).join('') + '</div>';
+  $('neg').innerHTML = '<p class="empty">Reseñas de los últimos 3 meses pendientes de leer para esta selección.</p>';
 }
 
 function renderTable(pool) {
